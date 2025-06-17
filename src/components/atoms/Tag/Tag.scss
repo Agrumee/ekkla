@@ -1,0 +1,29 @@
+@use "../../../styles/variables" as *;
+
+.a-tag {
+  display: inline-block;
+  padding: 0.3rem;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  border-radius: 5px;
+  background-color: $light-grey;
+  color: $black;
+  cursor: default;
+  border: none;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.a-tag--clickable {
+  cursor: pointer;
+}
+
+.a-tag--clickable:hover {
+  background-color: $dark-purple;
+  color: $white;
+}
+
+.a-tag--selected {
+  background-color: $dark-purple;
+  color: $white;
+}
