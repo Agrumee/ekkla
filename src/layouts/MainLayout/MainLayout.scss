@@ -1,4 +1,6 @@
+@use "../../styles/variables.scss" as *;
+
 .l-main {
-  background-color: red;
+  background-color: $purple;
   height: 100vh;
 }

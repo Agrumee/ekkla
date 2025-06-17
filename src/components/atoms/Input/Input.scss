@@ -1,0 +1,21 @@
+@use "../../../styles/variables.scss" as *;
+
+@mixin input-style($width, $max_width) {
+  display: flex;
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 10px;
+  padding: 5px;
+  width: $width;
+  max-width: $max_width;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.large-input {
+  @include input-style(auto, auto);
+}
+
+.small-input {
+  @include input-style(auto, 20%);
+}

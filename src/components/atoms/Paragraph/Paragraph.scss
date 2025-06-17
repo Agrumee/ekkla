@@ -1,0 +1,30 @@
+@use "../../../styles/variables.scss" as *;
+
+.a-paragraph {
+  color: $white;
+  line-height: 150%;
+  font-family: $font-family;
+  &.tiny {
+    font-size: $font-size-tiny;
+  }
+
+  &.small {
+    font-size: $font-size-base;
+  }
+
+  &.medium {
+    font-size: $font-size-lg;
+  }
+
+  &.big {
+    font-size: $font-size-xl;
+  }
+
+  &.white {
+    color: $white;
+  }
+
+  &.black {
+    color: $black;
+  }
+}

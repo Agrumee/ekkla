@@ -1,0 +1,68 @@
+@use "../../../styles/variables" as *;
+
+/* Mixin pour le style des boutons */
+@mixin button-style($line-height: 150%, $background-color, $color) {
+  font-family: $font-family;
+  line-height: $line-height;
+  background-color: $background-color;
+  color: $color;
+  box-shadow: $black 0px 10px 5px -10px;
+}
+
+.a-button {
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+
+  // &:focus {
+  //   box-shadow: none;
+  //   outline: none;
+  // }
+
+  &.primary {
+    @include button-style(150%, $black, $white);
+    border: 1px solid $black;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      background-color: $white;
+      color: $black;
+      border: 1px solid $grey;
+    }
+  }
+
+  &.secondary {
+    @include button-style(150%, $white, $black);
+    border: 1px solid $black;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      background-color: $dark-purple;
+      border: none;
+      color: $white;
+    }
+  }
+
+  &.tiny {
+    line-height: 100%;
+    font-size: $font-size-base;
+    width: 6rem;
+    padding: 5px;
+  }
+
+  &.small {
+    width: 12rem;
+  }
+
+  &.large {
+    width: 90%;
+  }
+
+  &:disabled {
+    background-color: $white;
+    color: $grey;
+    border: $light-grey 1px solid;
+    cursor: not-allowed;
+  }
+}

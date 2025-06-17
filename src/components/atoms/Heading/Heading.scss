@@ -1,0 +1,29 @@
+@use "../../../styles/variables.scss" as *;
+
+@mixin heading-style($font-size, $line-height: 150%) {
+  font-family: $font-family;
+  color: $black;
+  line-height: $line-height;
+  font-size: $font-size;
+  margin-top: 0rem;
+}
+
+h1 {
+  @include heading-style($font-size-title, 120%);
+}
+
+h2 {
+  @include heading-style($font-size-xl);
+}
+
+h3 {
+  @include heading-style($font-size-xl);
+}
+
+h4 {
+  @include heading-style($font-size-lg);
+}
+
+.white {
+  color: $white;
+}
