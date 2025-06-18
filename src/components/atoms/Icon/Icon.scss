@@ -1,0 +1,39 @@
+@use "../../../styles/variables" as *;
+
+.a-icon {
+  stroke: currentColor;
+  width: 1em;
+  height: 1em;
+
+  &.purple {
+    color: $purple;
+  }
+
+  &.dark-purple {
+    color: $dark-purple;
+  }
+
+  &.white {
+    color: $white;
+  }
+
+  &.light-grey {
+    color: $light-grey;
+  }
+
+  &.grey {
+    color: $grey;
+  }
+
+  &.black {
+    color: $black;
+  }
+
+  &.yellow {
+    color: $yellow;
+  }
+
+  &.dark-yellow {
+    color: $dark-yellow;
+  }
+}

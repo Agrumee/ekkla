@@ -1,21 +1,85 @@
 @use "../../../styles/variables.scss" as *;
 
-@mixin input-style($width, $max_width) {
-  display: flex;
+// =====================
+// INPUT STYLES
+// =====================
+
+.a-input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.6rem;
+  font-size: $font-size-base;
   background-color: $white;
   border: 1px solid $grey;
-  border-radius: 10px;
-  padding: 5px;
-  width: $width;
-  max-width: $max_width;
-  font-size: 18px;
-  line-height: 150%;
+  border-radius: 5px;
+
+  &.large {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.small {
+    width: 10rem;
+  }
 }
 
-.large-input {
-  @include input-style(auto, auto);
+// =====================
+// RADIO & CHECKBOX
+// =====================
+
+.custom-radio,
+.custom-checkbox {
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $grey;
+  background-color: $white;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+
+  &:checked {
+    background-color: $purple;
+    border-color: $purple;
+  }
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $white;
+  }
 }
 
-.small-input {
-  @include input-style(auto, 20%);
+.custom-radio {
+  border-radius: 50%;
+
+  &:checked::after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
 }
+
+.custom-checkbox {
+  border-radius: 4px;
+
+  &:checked::after {
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid $white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    background: transparent;
+  }
+}
+// =====================

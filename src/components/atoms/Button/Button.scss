@@ -15,11 +15,6 @@
   cursor: pointer;
   font-weight: 600;
 
-  // &:focus {
-  //   box-shadow: none;
-  //   outline: none;
-  // }
-
   &.primary {
     @include button-style(150%, $black, $white);
     border: 1px solid $black;

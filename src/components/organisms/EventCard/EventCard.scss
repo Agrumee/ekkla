@@ -1,0 +1,113 @@
+@use "../../../styles/variables" as *;
+
+.event-card {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $black;
+  box-shadow: $black 0px 10px 5px -10px;
+  transition: box-shadow 0.2s;
+}
+
+.event-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-card__image {
+  position: relative;
+  width: 40%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    );
+    pointer-events: none; // l'icône reste cliquable
+    z-index: 1;
+  }
+
+  .event-card__favorite {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 2; // au-dessus de l’overlay
+    font-size: 1.2rem;
+    color: $yellow;
+
+    &.outlined {
+      fill: none;
+      stroke: $yellow;
+    }
+
+    &.filled {
+      fill: $yellow;
+      stroke: none;
+    }
+  }
+}
+
+.event-card__content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.event-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: $white;
+}
+
+.event-card__description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.event-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #777;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.event-card__participants {
+  white-space: nowrap;
+}
+
+.event-card__tags {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.event-card__tag {
+  background-color: #f2f2f2;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}

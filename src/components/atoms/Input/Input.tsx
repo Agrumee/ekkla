@@ -6,8 +6,9 @@ interface InputProps {
   className?: string;
   size?: "large" | "small";
   placeholder?: string;
-  type?: "text" | "number" | "email" | "password" | "tel" | "url" | "date";
+  type?: "text" | "number" | "email" | "password" | "tel" | "url" | "date" | "checkbox" | "radio";
   value?: string | number;
+  checked?: boolean; // utile pour radio/checkbox
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   disabled?: boolean;
@@ -27,6 +28,7 @@ export default function Input({
   placeholder,
   type = "text",
   value,
+  checked,
   onChange,
   onBlur,
   disabled,
@@ -37,14 +39,18 @@ export default function Input({
   step,
   autoComplete,
 }: InputProps) {
+  const isOptionInput = type === "checkbox" || type === "radio";
+  const inputClass = isOptionInput ? `custom-${type}` : `${size}`;
+
   return (
     <input
       id={id}
       name={name}
-      className={`${className ?? ""} ${size}`}
-      placeholder={placeholder}
+      className={`a-input ${className ?? ""} ${inputClass}`}
+      placeholder={!isOptionInput ? placeholder : undefined}
       type={type}
       value={value}
+      checked={checked}
       onChange={onChange}
       onBlur={onBlur}
       disabled={disabled}

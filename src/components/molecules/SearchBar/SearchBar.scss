@@ -1,0 +1,41 @@
+@use "../../../styles/variables" as *;
+
+.m-search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px $light-grey;
+
+  .search-input {
+    width: 70%;
+    border-radius: 5px;
+  }
+  .localisation-input {
+    width: 30%;
+    border-left: 2px solid $light-grey;
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .search-input,
+  .localisation-input {
+    padding: 0rem 1rem;
+    display: flex;
+    align-items: center;
+    background: $white;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: $font-size-base;
+      padding: 0.75rem 0;
+      width: 100%;
+    }
+  }
+}

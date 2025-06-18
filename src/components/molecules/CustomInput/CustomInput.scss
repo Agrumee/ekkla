@@ -1,0 +1,32 @@
+@use "../../../styles/variables" as *;
+
+.m-custom-input {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.6rem;
+  font-size: $font-size-base;
+  background-color: $white;
+  border: 1px solid $light-grey;
+  border-radius: 5px;
+
+  &.large {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.small {
+    width: 10rem;
+  }
+
+  input.custom-input-field {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
