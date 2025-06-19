@@ -35,7 +35,7 @@ export default function EventCard({
         if (!description) return;
 
         const updateTruncation = () => {
-            const wordLimit = window.innerWidth >= 1024 ? 50 : 20;
+            const wordLimit = window.innerWidth >= 660 ? 60 : 10;
             const words = description.split(' ');
             const isTruncated = words.length > wordLimit;
 

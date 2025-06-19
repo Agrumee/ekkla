@@ -9,17 +9,28 @@ $yellow: #eaff00;
 $dark-yellow: #c6c30b;
 
 // 📐 Marges / espacements
-$spacing-sm: 0.5rem;
-$spacing-md: 1rem;
-$spacing-lg: 2rem;
+// 📐 Marges / espacements (version responsive via :root)
+:root {
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+@media (min-width: 660px) {
+  :root {
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+  }
+}
 
 // 📏 Tailles de police
 :root {
-  --font-size-tiny: 0.4rem;
-  --font-size-base: 0.6rem;
+  --font-size-tiny: 0.5rem;
+  --font-size-base: 0.8rem;
   --font-size-lg: 0.8rem;
   --font-size-xl: 1rem;
-  --font-size-title: 1.5rem;
+  --font-size-title: 1.2rem;
 }
 
 @media (min-width: 660px) {
@@ -28,7 +39,7 @@ $spacing-lg: 2rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.2rem;
     --font-size-xl: 1.5rem;
-    --font-size-title: 2rem;
+    --font-size-title: 1.2rem;
   }
 }
 

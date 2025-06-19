@@ -1,0 +1,25 @@
+@use "../../../styles/variables" as *;
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+  padding: 0.8rem 1.2rem;
+  align-self: center;
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
+  }
+}
