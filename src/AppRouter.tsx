@@ -6,6 +6,7 @@ import Profile from './pages/Profile/Profile'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import MainLayout from './layouts/MainLayout/MainLayout'
+import Notifications from './pages/Notifications/Notifications'
 
 
 const AppRouter = () => {
@@ -16,7 +17,9 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/events/:eventId" element={<Event />} />
           <Route path="/events/create" element={<CreateEventForm />} />
-          <Route path="/profile" element={<Profile />} />
+          {/* TODO add username param  */}
+          <Route path="/profile/" element={<Profile />} />
+          <Route path="/notifications" element={<Notifications />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

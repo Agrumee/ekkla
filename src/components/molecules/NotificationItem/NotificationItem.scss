@@ -1,0 +1,23 @@
+@use "../../../styles/variables.scss" as *;
+
+.m-notification {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: $black;
+  padding: var(--spacing-sm);
+  border-radius: 0.5rem;
+  text-decoration: none;
+
+  &__image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__message {
+    color: $white;
+    font-size: var(--font-size-base);
+  }
+}

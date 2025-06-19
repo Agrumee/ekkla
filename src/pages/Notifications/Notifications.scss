@@ -1,20 +1,14 @@
-@use "../../styles/variables.scss" as *;
+@use "../../styles/variables" as *;
 
-.p-home {
+.p-notifications {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-md);
   @media (min-width: 661px) {
     margin: 0rem var(--spacing-lg);
   }
-  &__events {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-self: center;
-  }
-  h2 {
-    margin: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
+  h3 {
+    margin: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
     display: flex;
     justify-content: center;
     border-bottom: 1px solid $white;

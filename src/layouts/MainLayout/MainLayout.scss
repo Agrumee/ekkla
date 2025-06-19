@@ -1,6 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .l-main {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(to bottom, $dark-purple 30%, $purple 60%);
 }
