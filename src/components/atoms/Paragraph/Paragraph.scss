@@ -4,20 +4,21 @@
   color: $white;
   line-height: 150%;
   font-family: $font-family;
+  margin: 0;
   &.tiny {
-    font-size: $font-size-tiny;
+    font-size: var(--font-size-tiny);
   }
 
   &.small {
-    font-size: $font-size-base;
+    font-size: var(--font-size-base);
   }
 
   &.medium {
-    font-size: $font-size-lg;
+    font-size: var(--font-size-lg);
   }
 
   &.big {
-    font-size: $font-size-xl;
+    font-size: var(--font-size-xl);
   }
 
   &.white {

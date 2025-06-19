@@ -40,7 +40,7 @@
 
   &.tiny {
     line-height: 100%;
-    font-size: $font-size-base;
+    font-size: var(--font-size-base);
     width: 6rem;
     padding: 5px;
   }

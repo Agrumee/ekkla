@@ -1,17 +1,19 @@
 import Icon from '../../atoms/Icon/Icon';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Tag from '../../atoms/Tag/Tag';
-import Link from '../../atoms/Link/Link';
+import { Link as RouterLink } from 'react-router';
+import { useEffect, useState } from 'react';
+
 import './EventCard.scss';
 
 interface EventCardProps {
-    id: number;
+    id: string;
     title: string;
     date: string;
     description?: string;
     imageUrl?: string;
     isFavorite?: boolean;
-    participantsCount?: number;
+    participantsCount?: [number, number];
     tags?: string[];
 }
 
@@ -24,15 +26,31 @@ export default function EventCard({
     participantsCount,
     tags,
 }: EventCardProps) {
+    const [truncatedDescription, setTruncatedDescription] = useState('');
+
     const displayedTags = tags?.slice(0, 1);
     const remainingTagCount = tags && tags.length > 1 ? tags.length - 1 : 0;
 
-    const truncatedDescription = description
-        ? description.split(' ').slice(0, 20).join(' ') + (description.split(' ').length > 20 ? ' [...]' : '')
-        : '';
+    useEffect(() => {
+        if (!description) return;
+
+        const updateTruncation = () => {
+            const wordLimit = window.innerWidth >= 1024 ? 50 : 20;
+            const words = description.split(' ');
+            const isTruncated = words.length > wordLimit;
+
+            const truncated = words.slice(0, wordLimit).join(' ') + (isTruncated ? ' [...]' : '');
+            setTruncatedDescription(truncated);
+        };
+
+        updateTruncation(); // initial
+        window.addEventListener('resize', updateTruncation);
+
+        return () => window.removeEventListener('resize', updateTruncation);
+    }, [description]);
 
     return (
-        <div className="event-card">
+        <div id={id} className="event-card">
             {imageUrl && (
                 <div className="event-card__image">
                     <Icon
@@ -43,44 +61,42 @@ export default function EventCard({
                         className={`event-card__favorite ${isFavorite ? 'filled' : 'outlined'}`}
                     />
                     <img src={imageUrl} alt={title} />
-                </div>
-            )}
-
-            <div className="event-card__content">
-                <div className="event-card__header">
-                    <h3 className="event-card__title">{title}</h3>
-                </div>
-
-                {truncatedDescription && (
-                    <Paragraph className="event-card__description" content={truncatedDescription} />
-                )}
-
-                <Link
-                    to={`/events/${id}`}
-                    className="event-card__more-link"
-                    content='Voir plus'
-                    color='white'
-                />
-
-                <div className="event-card__footer">
                     {participantsCount !== undefined && (
                         <span className="event-card__participants">
-                            {participantsCount} participant{participantsCount > 1 ? 's' : ''}
+                            {participantsCount[0]}/{participantsCount[1]}
                         </span>
                     )}
-
-                    {displayedTags && (
-                        <div className="event-card__tags">
-                            {displayedTags.map((tag, index) => (
-                                <Tag key={index} content={tag} />
-                            ))}
-                            {remainingTagCount > 0 && (
-                                <Tag content={`+${remainingTagCount}`} />
-                            )}
-                        </div>
-                    )}
                 </div>
-            </div>
+            )}
+            <RouterLink to={`/events/${id}`} className='event-card__redirection' >
+                <div className="event-card__content">
+                    <div className="event-card__header">
+                        <h3 className="event-card__title">{title}</h3>
+                    </div>
+
+                    {truncatedDescription && (
+                        <Paragraph className="event-card__description" content={truncatedDescription} aria-label={description} />
+                    )}
+
+
+                    <div className="event-card__footer">
+
+
+                        {displayedTags && (
+                            <div className="event-card__tags">
+                                {displayedTags.map((tag, index) => (
+                                    <Tag key={index} content={tag} />
+                                ))}
+                                {remainingTagCount > 0 && (
+                                    <Tag content={`+${remainingTagCount}`} />
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </RouterLink>
         </div>
+
+
     );
 }

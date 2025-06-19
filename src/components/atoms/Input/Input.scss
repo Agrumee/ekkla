@@ -10,7 +10,7 @@
   max-width: 100%;
   box-sizing: border-box;
   padding: 0.4rem 0.6rem;
-  font-size: $font-size-base;
+  font-size: var(--font-size-base);
   background-color: $white;
   border: 1px solid $grey;
   border-radius: 5px;

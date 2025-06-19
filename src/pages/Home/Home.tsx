@@ -34,12 +34,13 @@ export default function Home() {
                 <Input size="large" onBlur={(e) => console.log(e.target.value)} />
             </div>
             <EventCard
-                id={1}
+                id={'1'}
                 title="Titre de l' événement"
                 date='2025-05-14'
                 description="Description de l'événement : je teste les descriptions de plus de 20 mots pour voir si le système de troncature fonctionne correctement. Il faut que ça coupe au bout de 20 mots et ajoute ' [...]' à la fin pour indiquer qu'il y a plus de texte."
                 imageUrl='https://www.pereolive.com/wp-content/uploads/2021/06/pic-nic-au-pied-dun-arbre-pere-olive--1024x683.jpg'
                 isFavorite={true}
+                participantsCount={[10, 50]}
                 tags={['#Racisé.es', '#FemmesEtMinoritésDeGenre']} />
             {/* <TooltipInfo heading='je suis une info' content="Ceci est une info-bulle d'exemple. Elle peut contenir des informations supplémentaires ou des conseils." />
             <TooltipHelp label='je suis un label' content="Ceci est une info-bulle d'exemple. Elle peut contenir des informations supplémentaires ou des conseils." />

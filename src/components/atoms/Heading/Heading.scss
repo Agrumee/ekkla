@@ -9,19 +9,19 @@
 }
 
 h1 {
-  @include heading-style($font-size-title, 120%);
+  @include heading-style(var(--font-size-title), 120%);
 }
 
 h2 {
-  @include heading-style($font-size-xl);
+  @include heading-style(var(--font-size-xl));
 }
 
 h3 {
-  @include heading-style($font-size-xl);
+  @include heading-style(var(--font-size-xl));
 }
 
 h4 {
-  @include heading-style($font-size-lg);
+  @include heading-style(var(--font-size-lg));
 }
 
 .white {
