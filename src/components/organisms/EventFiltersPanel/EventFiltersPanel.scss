@@ -1,0 +1,32 @@
+@use "../../styles/variables" as *;
+
+.o-filter-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background: $white;
+  z-index: 999;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  transform: translateX(100%);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 768px) {
+    width: 400px;
+    box-shadow: -2px 0 10px $black;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+  }
+}

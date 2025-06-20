@@ -1,0 +1,58 @@
+@use "../../../styles/variables" as *;
+
+.m-tooltip {
+  position: relative;
+  display: inline-block;
+  font-family: $font-family;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-text {
+    font-size: var(--font-size-tiny);
+    background: $black;
+    color: $white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    max-width: 260px;
+    line-height: 1.4;
+
+    &--help {
+      margin-top: 0.5rem;
+      position: static;
+      white-space: normal;
+      display: inline-block;
+    }
+
+    &--info {
+      position: inherit;
+      transform: translateX(-50%) translateY(-0.5rem);
+      white-space: normal;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: $black transparent transparent transparent;
+      }
+    }
+  }
+}

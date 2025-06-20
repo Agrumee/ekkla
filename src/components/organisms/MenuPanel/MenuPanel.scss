@@ -1,0 +1,74 @@
+@use "../../../styles/variables.scss" as *;
+
+.o-menu-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 320px;
+    background: $dark-purple;
+    padding: var(--spacing-md);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      padding: var(--spacing-sm) 0;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: $white;
+    align-self: flex-end;
+  }
+
+  &.open {
+    pointer-events: auto;
+
+    .o-menu-panel__overlay {
+      opacity: 1;
+    }
+
+    &.left .o-menu-panel__panel {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    &.right .o-menu-panel__panel {
+      right: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &.right .o-menu-panel__panel {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+}

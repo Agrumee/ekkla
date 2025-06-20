@@ -17,8 +17,8 @@ export default function Home() {
     return (
         <div className="p-home">
             <SearchBar onSearch={handleSearch} />
-
             <Heading level={2} className='p-home__title' content='19 mai 2025' color='white' />
+
 
             <section className="p-home__events">
                 {/* Simule un seul événement ici — ensuite, on itérera sur une vraie liste */}

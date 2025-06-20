@@ -6,5 +6,5 @@ interface LabelProps {
 }
 
 export default function Label({ content, color }: LabelProps) {
-  return <label className={`label -${color}`}>{content}</label>;
+  return <label className={`a-label -${color}`}>{content}</label>;
 }
