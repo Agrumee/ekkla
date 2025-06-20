@@ -2,9 +2,14 @@
 
 .a-link {
   font-weight: 500;
-  text-decoration: underline;
+  text-decoration: none;
   transition: color 0.2s;
   font-size: var(--font-size-base);
+
+  &:focus {
+    outline: 2px solid $yellow;
+    outline-offset: 2px;
+  }
 
   &--purple {
     color: $purple;

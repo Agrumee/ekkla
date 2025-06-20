@@ -8,7 +8,6 @@ interface IconProps extends ComponentProps<LucideIcon> {
     className?: string;
     color?: 'purple' | 'dark-purple' | 'white' | 'light-grey' | 'grey' | 'black' | 'yellow' | 'dark-yellow';
     size?: number;
-    onClick?: () => void;
 }
 
 export default function Icon({
@@ -16,7 +15,6 @@ export default function Icon({
     size = 24,
     className = '',
     color = 'black',
-    onClick,
 }: IconProps) {
     const LucideIcon = Icons[name] as LucideIcon;
 
@@ -29,7 +27,6 @@ export default function Icon({
         <LucideIcon
             size={size}
             className={`a-icon ${color} ${className}`}
-            onClick={onClick}
         />
     );
 }

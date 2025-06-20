@@ -20,7 +20,7 @@ export default function Home() {
             <Heading level={2} className='p-home__title' content='19 mai 2025' color='white' />
 
 
-            <section className="p-home__events">
+            <main className="p-home__events">
                 {/* Simule un seul événement ici — ensuite, on itérera sur une vraie liste */}
                 <EventCard
                     id={'1'}
@@ -30,9 +30,9 @@ export default function Home() {
                     imageUrl='https://www.pereolive.com/wp-content/uploads/2021/06/pic-nic-au-pied-dun-arbre-pere-olive--1024x683.jpg'
                     isFavorite={true}
                     participantsCount={[10, 50]}
-                    tags={['#Racisé.es', '#FemmesEtMinoritésDeGenre']}
+                    tags={['#FemmesEtMinoritésDeGenre', '#Racisé.es']}
                 />
-            </section>
+            </main>
         </div>
     );
 }

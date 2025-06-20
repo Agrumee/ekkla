@@ -10,10 +10,39 @@
 }
 
 .a-button {
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: 600;
+  &.icon {
+    background: none;
+    border: none;
+  }
+  &.primary,
+  &.secondary {
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+
+    &.tiny {
+      line-height: 100%;
+      font-size: var(--font-size-base);
+      width: 6rem;
+      padding: 5px;
+    }
+
+    &.small {
+      width: 12rem;
+    }
+
+    &.large {
+      width: 90%;
+    }
+
+    &:disabled {
+      background-color: $white;
+      color: $grey;
+      border: $light-grey 1px solid;
+      cursor: not-allowed;
+    }
+  }
 
   &.primary {
     @include button-style(150%, $black, $white);
@@ -36,27 +65,5 @@
       border: none;
       color: $white;
     }
-  }
-
-  &.tiny {
-    line-height: 100%;
-    font-size: var(--font-size-base);
-    width: 6rem;
-    padding: 5px;
-  }
-
-  &.small {
-    width: 12rem;
-  }
-
-  &.large {
-    width: 90%;
-  }
-
-  &:disabled {
-    background-color: $white;
-    color: $grey;
-    border: $light-grey 1px solid;
-    cursor: not-allowed;
   }
 }

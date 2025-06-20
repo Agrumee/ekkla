@@ -39,7 +39,7 @@ export default function Profile() {
                     imageUrl="https://www.pereolive.com/wp-content/uploads/2021/06/pic-nic-au-pied-dun-arbre-pere-olive--1024x683.jpg"
                     isFavorite={true}
                     participantsCount={[10, 50]}
-                    tags={['#Racisé.es', '#FemmesEtMinoritésDeGenre']}
+                    tags={['#FemmesEtMinoritésDeGenre', '#Racisé.es']}
                 />
 
                 <Button

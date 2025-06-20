@@ -1,10 +1,9 @@
 import Icon from '../../atoms/Icon/Icon';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Tag from '../../atoms/Tag/Tag';
-import { Link as RouterLink } from 'react-router';
 import { useEffect, useState } from 'react';
-
 import './EventCard.scss';
+import Link from '../../atoms/Link/Link';
 
 interface EventCardProps {
     id: string;
@@ -50,40 +49,40 @@ export default function EventCard({
     }, [description]);
 
     return (
-        <div id={id} className="event-card">
+        <div id={id} className="o-event-card">
             {imageUrl && (
-                <div className="event-card__image">
+                <div className="o-event-card__image">
                     <Icon
                         name="Star"
                         onClick={() => console.log('ici faudra update le state de isFavorite')}
                         size={24}
                         color="yellow"
-                        className={`event-card__favorite ${isFavorite ? 'filled' : 'outlined'}`}
+                        className={`o-event-card__favorite ${isFavorite ? 'filled' : 'outlined'}`}
                     />
                     <img src={imageUrl} alt={title} />
                     {participantsCount !== undefined && (
-                        <span className="event-card__participants">
+                        <span className="o-event-card__participants">
                             {participantsCount[0]}/{participantsCount[1]}
                         </span>
                     )}
                 </div>
             )}
-            <RouterLink to={`/events/${id}`} className='event-card__redirection' >
-                <div className="event-card__content">
-                    <div className="event-card__header">
-                        <h3 className="event-card__title">{title}</h3>
+            <Link to={`/events/${id}`} ariaLabel="Accéder au détail de l'événement" className='o-event-card__redirection' >
+                <div className="o-event-card__content">
+                    <div className="o-event-card__header">
+                        <h3 className="o-event-card__title">{title}</h3>
                     </div>
 
                     {truncatedDescription && (
-                        <Paragraph className="event-card__description" content={truncatedDescription} aria-label={description} />
+                        <Paragraph className="o-event-card__description" content={truncatedDescription} aria-label={description} />
                     )}
 
 
-                    <div className="event-card__footer">
+                    <div className="o-event-card__footer">
 
 
                         {displayedTags && (
-                            <div className="event-card__tags">
+                            <div className="o-event-card__tags">
                                 {displayedTags.map((tag, index) => (
                                     <Tag key={index} content={tag} />
                                 ))}
@@ -94,7 +93,7 @@ export default function EventCard({
                         )}
                     </div>
                 </div>
-            </RouterLink>
+            </Link>
         </div>
 
 

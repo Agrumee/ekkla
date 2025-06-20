@@ -2,7 +2,7 @@ import "./Button.scss";
 
 interface ButtonProps {
   className?: string;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | 'icon';
   size?: "tiny" | "small" | "large";
   content?: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
