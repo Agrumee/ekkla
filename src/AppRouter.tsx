@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import Home from './pages/Home/Home'
-import Event from './pages/Event/Event'
+import Event from './pages/EventDetailPage/EventDetailPage'
 import CreateEventForm from './pages/CreateEventForm/CreateEventForm'
 import Profile from './pages/Profile/Profile'
 import Login from './pages/Login/Login'

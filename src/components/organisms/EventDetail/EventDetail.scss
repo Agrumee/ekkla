@@ -1,0 +1,76 @@
+@use "../../../styles/variables" as *;
+
+.o-event-detail {
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__card {
+    background: $black;
+    color: $white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__organizer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+
+    &-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &-name {
+      font-weight: bold;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    @media (min-width: 661px) {
+      height: 25rem;
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    color: $light-grey;
+
+    &-date {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+  }
+
+  &__footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: $light-grey;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
