@@ -3,7 +3,7 @@
 .p-event-detail-page {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-md);
+  padding: 0 var(--spacing-md);
   @media (min-width: 661px) {
     margin: 0rem var(--spacing-lg);
   }

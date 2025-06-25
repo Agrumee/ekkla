@@ -3,7 +3,7 @@ import "./Paragraph.scss";
 interface ParagraphProps {
   content: string;
   size?: 'tiny' | 'small' | 'medium' | 'big';
-  color?: 'black' | 'white';
+  color?: 'black' | 'white' | 'grey' | 'light-grey' | 'purple' | 'dark-purple' | 'yellow' | 'dark-yellow';
   className?: string;
 }
 

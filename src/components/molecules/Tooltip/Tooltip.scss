@@ -37,11 +37,18 @@
     }
 
     &--info {
-      position: inherit;
+      position: absolute;
+      bottom: 100%;
+      left: 100%;
       transform: translateX(-50%) translateY(-0.5rem);
       white-space: normal;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      background: $white;
+      color: $black;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      width: 20rem;
 
       &::after {
         content: "";

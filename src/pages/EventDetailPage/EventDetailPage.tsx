@@ -4,11 +4,15 @@ import './EventDetailPage.scss'
 export default function EventDetailPage() {
     const event = {
         id: 1,
-        title: "Sample Event",
+        type: "limité",
+        title: "Atelier Poterie",
         date: "2023-10-01",
-        description: "This is a sample event description.",
+        description: "Bonjour ! J'ai créé cet événement pour rencontrer de nouvelles personnes qui partagent un intérêt pour tout ce qui est activités manuelles. J'ai hâte de vous y voir ! J'aimerais apprendre à faire de la poterie et je pense que ce serait super de le faire ensemble. J'ai réservé un atelier pour nous, alors n'hésitez pas à vous inscrire !",
         location: "Sample Location",
-        attendees: 100,
+        attendees: 3,
+        maxAttendees: 15,
+        priceMin: 30,
+        priceMax: 30,
         imageUrl: 'https://images.unsplash.com/photo-1478234170285-53301bcf2461?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         organizer: {
             name: "John Doe",

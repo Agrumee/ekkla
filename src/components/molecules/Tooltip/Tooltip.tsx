@@ -2,6 +2,7 @@ import './Tooltip.scss';
 import { useEffect, useState } from 'react';
 import Icon from '../../atoms/Icon/Icon';
 import type { ReactNode } from 'react';
+import Button from '../../atoms/Button/Button';
 
 interface TooltipProps {
     type?: 'help' | 'info';
@@ -32,13 +33,14 @@ export default function Tooltip({ type = 'info', content, children }: TooltipPro
             )}
             <div className="m-tooltip-header">
                 {children}
-                <Icon
-                    className="m-tooltip-icon"
-                    name={type === 'help' ? 'CircleHelp' : 'Info'}
-                    color="white"
-                    size={28}
-                    onClick={toggleTooltip}
-                />
+                <Button variant='icon' className="m-tooltip-button" onClick={toggleTooltip}>
+                    <Icon
+                        className="m-tooltip-icon"
+                        name={type === 'help' ? 'CircleHelp' : 'Info'}
+                        color="white"
+                        size={20}
+                    />
+                </Button>
             </div>
             {visible && type === 'help' && (
                 <span className={`m-tooltip-text m-tooltip-text--${type}`}>
